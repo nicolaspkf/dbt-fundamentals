@@ -29,3 +29,5 @@ models:
       - name: name
         description: "{{ doc('customer_name') }}"
         tags: ['pii']
+
+        -- More column configs...
