@@ -8,7 +8,7 @@ with final as (
     ,is_cancelled::int                 as canecelled_flag            -- Changed boolean-like naming to ´flag-like naming. 
     ,lead_time::int                    as lead_time_sec              -- indicate time unit in naming
     ,arrival_date_year::int            as arrival_year
-    ,arrival_date_month::text          as arrival_month_of_year
+    ,arrival_date_month::text          as arrival_month_name
     ,arrival_date_week_number::int     as arrival_week_of_year
     ,arrival_date_day_of_month::int    as arrival_day_of_month
     ,stays_in_weekend_nights::int      as stays_in_weekend_nights
