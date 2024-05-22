@@ -16,7 +16,7 @@ with stays as (
 
 )
     
--- Make calculations and other preparations
+-- Extract first and last name. Create arrival_date column from input data and calculate departure date. Extract the customer's email domain.
 ,final as (
 
   select
