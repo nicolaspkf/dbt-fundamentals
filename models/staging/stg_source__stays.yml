@@ -23,7 +23,7 @@ models:
       - name: lead_time
         description: "INSERT DESCRIPTION!"
 
-      - name: arrival_date_year
+      - name: arrival_year
         description: "The year that the given stay was booked for."
       
       - name: name
