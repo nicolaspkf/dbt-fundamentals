@@ -15,19 +15,19 @@ with stays as (
   {% endif %}
 
 )
-
-with source_data as (
-  select *from {{ source('source_name', 'table_name') }}
-  {% if is_incremental() %}
-    where loaded_date >= current_date - 1
-  {% endif %}
-)
     
 -- Make calculations and other preparations
 ,final as (
 
   select
-
+    stay_id
+    ,split_part(regexp_replace(name,'(Ms\\. |Mr\\. |Dr\\. | MD| PhD| DDS| DVM| II)',''), ' ', 1)        as guest_first_name
+    ,split_part(regexp_replace(name,'(Ms\\. |Mr\\. |Dr\\. | MD| PhD| DDS| DVM| II)',''), ' ', -1 )      as guest_last_name
+    ,date_from_parts(year, month_of_year, day_of_month) as arrival_date
+    date of departure
+    day of week of arrival
+    day of week of departure
+    email domain (e.g. @gmail.com, etc.)
   from 
     stays
   
