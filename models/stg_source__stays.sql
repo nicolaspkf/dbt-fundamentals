@@ -1,11 +1,3 @@
--- Load latest source data with some overlap to capture late arrivals (late data arrivals - not arrival of customers)
-with source_data as (
-  select *from {{ source('source_name', 'table_name') }}
-  {% if is_incremental() %}
-    where loaded_date >= current_date - 1
-  {% endif %}
-)
-
 -- Unpack the source data into columns, rename columns to fit business logic, cast to relevant data types 
 with final as (
   
