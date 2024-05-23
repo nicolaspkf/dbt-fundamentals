@@ -1,11 +1,3 @@
--- Incremental model configs
-{{
-    config(
-        materialized = 'incremental'
-        ,unique_key = 'stay_id'     
-    )
-}}
-  
 -- Load latest staged data with some overlap to capture late arrivals (late data arrivals - not arrival of customers), assuming that load or ingestion is done at least once per day.
 with stays as (
     
