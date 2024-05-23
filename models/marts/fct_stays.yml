@@ -1,8 +1,9 @@
 models:
-  - name: stg_source__stays
-    description: "Staging model unpacking hotel booking data."
+  - name: fct_stays
+    description: "Fact model which includes the arrival and departure dates for each booking."
     config:
-      materilized: view
+      materilized: incremental
+      unique_key: stay_id
     columns:
       - name: stay_id
         description: "A unique identifyer of the booked stay"
