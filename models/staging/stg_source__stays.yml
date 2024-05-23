@@ -9,7 +9,7 @@ models:
           expression: "regexp_like('credit_card','\\*{12,12}[0-9]{4,4)')"
     columns:
       - name: stay_id
-        description: "A unique identifyer of the booked stay"
+        description: "A unique identifyer of a hotel booking."
         tests:
           - not_null
           - unique
