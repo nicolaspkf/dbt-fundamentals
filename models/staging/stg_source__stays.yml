@@ -8,8 +8,8 @@ models:
       - dbt_utils.expression_is_true:
           expression: "regexp_like('credit_card','\\*{12,12}[0-9]{4,4)')"
     columns:
-      - name: stay_id
-        description: "A unique identifyer of a hotel booking."
+      - name: hotel_booking_id
+        description: "{{ doc('hotel_booking_id')} }"
         tests:
           - not_null
           - unique
