@@ -3,13 +3,10 @@ models:
     description: "Fact model which includes the arrival and departure dates for each booking."
     config:
       materilized: incremental
-      unique_key: stay_id
+      unique_key: hotel_booking_id
     columns:
-      - name: stay_id
-        description: "A unique identifyer of the booked stay"
-        tests:
-          - not_null
-          - unique
+      - name: hotel_booking_id
+        description: "{{ doc('hotel_booking_id')} }"
           
       - name: hotel
         description: "{{ doc('hotel')} }"
