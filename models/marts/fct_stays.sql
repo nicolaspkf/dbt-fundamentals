@@ -3,7 +3,7 @@ with stays as (
     
   select * from {{ ref('stg_source__stays') }}
   {% if is_incremental() %}
-    where loaded_date >= (select max(loaded_date) from {{this}})
+    where loaded_date >= (select max(loaded_date) from {{ this }})
   {% endif %}
 
 )
