@@ -3,7 +3,7 @@ with final as (
   
   select
     ,{{ dbt_utils.generate_surrogate_key([*fields that identify the given row*]) }}
-                                       as stay_id                    -- generate a primary key for the table if it does not exist in the source table. 
+                                       as hotel_booking_id           -- generate a primary key for the table if it does not exist in the source table. 
     ,hotel::text                       as hotel
     ,is_cancelled::int                 as canecelled_flag            -- Changed boolean-like naming to ´flag-like naming. 
     ,lead_time::int                    as lead_time_sec              -- indicate time unit in naming
@@ -44,7 +44,7 @@ with final as (
     ,credit_card
 
   from
-    {{ source('source_name', 'table_name') }}
+    {{ source('source_name', 'raw_customer_stays') }}
   
 )
 
