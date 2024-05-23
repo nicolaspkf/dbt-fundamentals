@@ -23,10 +23,10 @@ models:
         description: "The date of departure for a given hotel booking. The departure date is calculated by adding the sum of stays in weekend nights AND week nights to the the arrival date."
   
       - name: arrival_day_name
-        description: "Name of the day of arrival, e.g. 'Tuesday'." 
+        description: "Name of the day of arrival, e.g. 'Tuesday'."     #Note: Could maybe be moved to dim_calendar, since it is a date dimension and can be retrieved from dim_calendar via the arrival_date column. 
   
       - name: departure_day_name
-        description: "Name of the day of departure, e.g. 'Tuesday'."
+        description: "Name of the day of departure, e.g. 'Tuesday'."   #Note: Could maybe be moved to dim_calendar, since it is a date dimension and can be retrieved from dim_calendar via the departure_date column. 
   
       - name: email_domain
         description: "The customer's email domain."
