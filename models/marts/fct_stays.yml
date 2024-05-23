@@ -1,1 +1,29 @@
+models:
+  - name: stg_source__stays
+    description: "Staging model unpacking hotel booking data."
+    config:
+      materilized: view
+    columns:
+      - name: stay_id
+        description: "A unique identifyer of the booked stay"
+        tests:
+          - not_null
+          - unique
+          
+      - name: hotel
+        description: "{{ doc('hotel')} }"
 
+      - name: cancelled_flag
+        description: "A binary value indicating whether the stay was cancelled (1) or not (0)."
+
+      - name: lead_time
+        description: "INSERT DESCRIPTION!"
+
+      - name: arrival_year
+        description: "The year that the given stay was booked for."
+      
+      - name: name
+        description: "{{ doc('customer_name') }}"
+        tags: ['pii']
+
+        -- More column configs...
