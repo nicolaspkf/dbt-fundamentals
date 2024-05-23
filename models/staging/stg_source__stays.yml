@@ -7,6 +7,7 @@ models:
     tests:
       - dbt_utils.expression_is_true:
           expression: "regexp_like('credit_card','\\*{12,12}[0-9]{4,4)')"
+    tags: ['marketing']  # Note: Can be used to run models for a specific department (if models are tagged with the department for which it is relevant), or one can arrange models in specifc department folders under the 'models' folder to achieve the same goal.
     columns:
       - name: hotel_booking_id
         description: "{{ doc('hotel_booking_id')} }"
