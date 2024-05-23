@@ -1,4 +1,4 @@
--- OBS! Work in progress: Make .md files with descriptions of 'hotel' and 'customer_name'.
+# OBS! Work in progress: Make .md files with descriptions of 'hotel' and 'customer_name'.
 models:
   - name: stg_source__stays
     description: "Staging model unpacking hotel stay booking data."
