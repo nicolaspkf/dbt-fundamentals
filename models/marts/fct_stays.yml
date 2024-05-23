@@ -8,20 +8,28 @@ models:
       - name: hotel_booking_id
         description: "{{ doc('hotel_booking_id')} }"
           
-      - name: hotel
-        description: "{{ doc('hotel')} }"
-
-      - name: cancelled_flag
-        description: "A binary value indicating whether the stay was cancelled (1) or not (0)."
-
-      - name: lead_time
-        description: "INSERT DESCRIPTION!"
-
-      - name: arrival_year
-        description: "The year that the given stay was booked for."
-      
-      - name: name
-        description: "{{ doc('customer_name') }}"
+      - name: guest_first_name
+        description: "The first name of the guest that made the given booking. First name is omitting specific mentioning of any titles (Mr., PhD etc.)."
+        tags: ['pii']
+  
+      - name: guest_last_name
+        description: "The last name of the guest that made the given booking. First name is omitting specific mentioning of any titles (MD, PhD etc.)."
+        tags: ['pii']
+  
+      - name: arrival_date
+        description: "The date of arrival for the given hotel booking. This date is deduce from the arrival year (e.g. 2022), the arrival month name (e.g. 'February') and the arrival day of month (e.g. 23)."
+  
+      - name: departure_date
+        description: "The date of departure for a given hotel booking. The departure date is calculated by adding the sum of stays in weekend nights AND week nights to the the arrival date."
+  
+      - name: arrival_day_name
+        description: "Name of the day of arrival, e.g. 'Tuesday'." 
+  
+      - name: departure_day_name
+        description: "Name of the day of departure, e.g. 'Tuesday'."
+  
+      - name: email_domain
+        description: "The customer's email domain."
         tags: ['pii']
 
         ### More column configs... ###
